@@ -1,26 +1,203 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Выбор даты и времени</title>
-    <link rel="stylesheet" href="styles.css" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Выбор даты и времени — СЕВЕР</title>
+    <link rel="stylesheet" href="styles.css">
   </head>
-  <body>
-    <!--
-      ЗАДАНИЕ
-      ========
-      Сверстать страницу выбора даты и времени по своему макету.
+  <body class="page" id="top">
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a class="brand" href="#top" aria-label="СЕВЕР — барбершоп">
+          <span class="brand__mark" aria-hidden="true"></span>
+          <span class="brand__wordmark">
+            <span class="brand__name">СЕВЕР</span>
+            <span class="brand__caption">Барбершоп</span>
+          </span>
+        </a>
+        <nav class="site-nav" aria-label="Основная навигация">
+          <button class="site-nav__item" type="button">Услуги</button>
+          <button class="site-nav__item" type="button">Мастера</button>
+          <button class="site-nav__item" type="button">Отзывы</button>
+          <a class="site-nav__item" href="#contacts">Контакты</a>
+        </nav>
+        <a class="action action--gold site-header__book" href="#booking">Записаться</a>
+      </div>
+    </header>
 
-      Пока это только вёрстка. Никакого JavaScript — ни кликов,
-      ни переходов, ни выбора дня. Всё статично.
+    <nav class="progress" aria-label="Этапы записи">
+      <ol class="container progress__list">
+        <li class="progress__step progress__step--complete">
+          <span class="progress__number" aria-hidden="true"><span class="icon icon--check"></span></span>
+          <span class="progress__label">Мастер<span class="visually-hidden"> — выбран</span></span>
+        </li>
+        <li class="progress__step progress__step--complete">
+          <span class="progress__number" aria-hidden="true"><span class="icon icon--check"></span></span>
+          <span class="progress__label">Услуга<span class="visually-hidden"> — выбрана</span></span>
+        </li>
+        <li class="progress__step" aria-current="step">
+          <span class="progress__number">3</span>
+          <span class="progress__label">Дата и время</span>
+        </li>
+        <li class="progress__step">
+          <span class="progress__number">4</span>
+          <span class="progress__label">Контакты</span>
+        </li>
+        <li class="progress__step">
+          <span class="progress__number">5</span>
+          <span class="progress__label">Подтверждение</span>
+        </li>
+      </ol>
+    </nav>
 
-      Стили пишите в styles.css. Разметку — здесь.
-    -->
+    <main class="booking" id="booking">
+      <div class="container">
+        <header class="booking__intro">
+          <p class="eyebrow">Шаг 3 / 5</p>
+          <h1 class="booking__title">Выберите дату и время</h1>
+          <p class="booking__description">Запланируйте визит к Николаю Волкову · мужская стрижка, 60 мин.</p>
+        </header>
 
-    <div class="page">
-      <!-- Начните отсюда. Разметьте шапку, основную область
-           с календарём и слотами, подвал. -->
-    </div>
+        <div class="booking__panels">
+          <section class="panel calendar" aria-labelledby="calendar-title">
+            <div class="calendar__header">
+              <h2 class="panel__title" id="calendar-title">Декабрь 2026</h2>
+              <div class="calendar__controls">
+                <button class="month-control month-control--previous" type="button" aria-label="Предыдущий месяц">
+                  <span class="icon icon--chevron-left" aria-hidden="true"></span>
+                </button>
+                <button class="month-control" type="button" aria-label="Следующий месяц">
+                  <span class="icon icon--chevron-right" aria-hidden="true"></span>
+                </button>
+              </div>
+            </div>
+
+            <div class="calendar__grid">
+              <abbr class="weekday" title="Понедельник">Пн</abbr>
+              <abbr class="weekday" title="Вторник">Вт</abbr>
+              <abbr class="weekday" title="Среда">Ср</abbr>
+              <abbr class="weekday" title="Четверг">Чт</abbr>
+              <abbr class="weekday" title="Пятница">Пт</abbr>
+              <abbr class="weekday" title="Суббота">Сб</abbr>
+              <abbr class="weekday" title="Воскресенье">Вс</abbr>
+
+              <time class="day day--outside" datetime="2026-11-30" aria-hidden="true">30</time>
+              <button class="day" type="button" aria-label="1 декабря" aria-pressed="false">1</button>
+              <button class="day" type="button" aria-label="2 декабря" aria-pressed="false">2</button>
+              <button class="day" type="button" aria-label="3 декабря" aria-pressed="false">3</button>
+              <button class="day" type="button" aria-label="4 декабря" aria-pressed="false">4</button>
+              <button class="day day--busy" type="button" aria-label="5 декабря, нет свободного времени" disabled>5</button>
+              <button class="day" type="button" aria-label="6 декабря" aria-pressed="true">6</button>
+
+              <button class="day" type="button" aria-label="7 декабря" aria-pressed="false">7</button>
+              <button class="day" type="button" aria-label="8 декабря" aria-pressed="false">8</button>
+              <button class="day" type="button" aria-label="9 декабря" aria-pressed="false">9</button>
+              <button class="day" type="button" aria-label="10 декабря" aria-pressed="false">10</button>
+              <button class="day" type="button" aria-label="11 декабря" aria-pressed="false">11</button>
+              <button class="day" type="button" aria-label="12 декабря" aria-pressed="false">12</button>
+              <button class="day" type="button" aria-label="13 декабря" aria-pressed="false">13</button>
+
+              <button class="day" type="button" aria-label="14 декабря" aria-pressed="false">14</button>
+              <button class="day" type="button" aria-label="15 декабря" aria-pressed="false">15</button>
+              <button class="day" type="button" aria-label="16 декабря" aria-pressed="false">16</button>
+              <button class="day" type="button" aria-label="17 декабря" aria-pressed="false">17</button>
+              <button class="day" type="button" aria-label="18 декабря" aria-pressed="false">18</button>
+              <button class="day" type="button" aria-label="19 декабря" aria-pressed="false">19</button>
+              <button class="day" type="button" aria-label="20 декабря" aria-pressed="false">20</button>
+
+              <button class="day" type="button" aria-label="21 декабря" aria-pressed="false">21</button>
+              <button class="day" type="button" aria-label="22 декабря" aria-pressed="false">22</button>
+              <button class="day" type="button" aria-label="23 декабря" aria-pressed="false">23</button>
+              <button class="day" type="button" aria-label="24 декабря" aria-pressed="false">24</button>
+              <button class="day" type="button" aria-label="25 декабря" aria-pressed="false">25</button>
+              <button class="day" type="button" aria-label="26 декабря" aria-pressed="false">26</button>
+              <button class="day" type="button" aria-label="27 декабря" aria-pressed="false">27</button>
+
+              <button class="day" type="button" aria-label="28 декабря" aria-pressed="false">28</button>
+              <button class="day" type="button" aria-label="29 декабря" aria-pressed="false">29</button>
+              <button class="day" type="button" aria-label="30 декабря" aria-pressed="false">30</button>
+              <button class="day" type="button" aria-label="31 декабря" aria-pressed="false">31</button>
+              <time class="day day--outside" datetime="2027-01-01" aria-hidden="true">1</time>
+              <time class="day day--outside" datetime="2027-01-02" aria-hidden="true">2</time>
+              <time class="day day--outside" datetime="2027-01-03" aria-hidden="true">3</time>
+            </div>
+
+            <ul class="calendar__legend">
+              <li class="calendar__legend-item calendar__legend-item--selected">Выбранная дата</li>
+              <li class="calendar__legend-item calendar__legend-item--busy">Нет свободного времени</li>
+            </ul>
+          </section>
+
+          <section class="panel slots" aria-labelledby="slots-title">
+            <h2 class="panel__title" id="slots-title">Время на 6 декабря</h2>
+            <p class="slots__duration">Продолжительность визита: 60 мин</p>
+            <div class="slots__grid">
+              <button class="slot" type="button" aria-pressed="false">10:00</button>
+              <button class="slot" type="button" disabled>
+                11:00 <span class="slot__status">Занято</span>
+              </button>
+              <button class="slot" type="button" aria-pressed="false">12:00</button>
+              <button class="slot" type="button" disabled>
+                13:00 <span class="slot__status">Занято</span>
+              </button>
+              <button class="slot" type="button" aria-pressed="true">14:00</button>
+              <button class="slot" type="button" aria-pressed="false">15:00</button>
+              <button class="slot" type="button" aria-pressed="false">16:00</button>
+              <button class="slot" type="button" aria-pressed="false">17:00</button>
+            </div>
+            <p class="slots__timezone">Время указано по Москве (МСК).</p>
+          </section>
+        </div>
+
+        <section class="booking-summary" aria-label="Выбранная запись">
+          <button class="action action--outline booking-summary__back" type="button">
+            <span class="icon icon--arrow-left" aria-hidden="true"></span>
+            Назад
+          </button>
+          <div class="booking-summary__copy">
+            <time class="booking-summary__date" datetime="2026-12-06T14:00:00+03:00">6 декабря, воскресенье · 14:00</time>
+            <p class="booking-summary__details">60 мин · 2 200 руб.</p>
+          </div>
+          <button class="action action--gold booking-summary__next" type="button">
+            Далее
+            <span class="icon icon--arrow-right" aria-hidden="true"></span>
+          </button>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="site-footer__columns">
+          <div class="site-footer__about">
+            <a class="brand brand--compact" href="#top" aria-label="СЕВЕР — барбершоп">
+              <span class="brand__mark" aria-hidden="true"></span>
+              <span class="brand__wordmark">
+                <span class="brand__name">СЕВЕР</span>
+                <span class="brand__caption">Барбершоп</span>
+              </span>
+            </a>
+            <p class="site-footer__tagline">Точность в деталях.<br>Уважение к твоему стилю.</p>
+          </div>
+          <section class="site-footer__section" id="contacts" aria-labelledby="footer-contacts">
+            <h2 class="eyebrow site-footer__heading" id="footer-contacts">Контакты</h2>
+            <address class="site-footer__address">
+              <p class="site-footer__street">ул. Садовая, 15, Москва</p>
+              <a class="site-footer__link" href="tel:+74951234567">+7 (495) 123-45-67</a>
+            </address>
+          </section>
+          <section class="site-footer__section" aria-labelledby="footer-hours">
+            <h2 class="eyebrow site-footer__heading" id="footer-hours">Режим работы</h2>
+            <p class="site-footer__hours">Пн–Пт: 09:00–21:00</p>
+            <p class="site-footer__hours">Сб–Вс: 10:00–19:00</p>
+          </section>
+        </div>
+        <div class="site-footer__bottom">
+          <p class="site-footer__copyright">© 2026 СЕВЕР. Все права защищены.</p>
+          <button class="site-footer__link" type="button">Политика конфиденциальности</button>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
